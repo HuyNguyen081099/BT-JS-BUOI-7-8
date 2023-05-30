@@ -1,0 +1,12 @@
+.outside{
+    width: 500px;
+    background-color: rgb(132, 198, 220);
+    text-align: center;
+    margin: auto;
+    padding: 20px 0 20px 0;
+    border-style: inset;
+}
+.tieude {
+    color: rgb(195, 6, 6);
+}
+

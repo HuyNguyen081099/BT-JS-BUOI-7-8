@@ -1,15 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    
+
+<div class="outside">
+    <header>
+        <h2 style="padding: 10px 0 20px 0;">BÀI TẬP JS BUỔI 7-8</h2>
+    </header>
+    <section>
+        <input id="tendm" type="number" placeholder="Nhập số n">
+        <button onclick="themmoi()" class="btn-1">thêm số</button>
+        <p style="padding-top: 20px;">
+            Mảng số: <span id="result1"></span>
+        </p>
+    </section>
+    <container>
+        <p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                Nhập số và tính theo yêu cầu bên dưới
+            </a>
+            <p>V</p>
+        </p>
+        <div class="collapse" id="collapseExample" style="background-color: azure; border-style: outset;">
+            <p class="tieude">1.Tổng số dương</p>
+            <p>
+                Tính tổng: <span id="result2"></span>
+            </p>
+            <button onclick="btn1()" style="margin-bottom: 2rem;">Tính</button>
+        </div>
 
 
-    <script src="./index.js"></script>
+
+        <div class="collapse" id="collapseExample" style="background-color: azure; border-style: outset;">
+            <p  class="tieude">2.Đếm số dương</p>
+            <p>
+                Đếm số: <span id="result3"></span>
+            </p>
+            <button  onclick="btn2()" style="margin-bottom: 2rem;">Tính</button>
+        </div>
+
+
+        <div class="collapse" id="collapseExample" style="background-color: azure; border-style: outset;">
+            <p class="tieude">3.Tìm số nhỏ nhất</p>
+            <p>
+                Số nhỏ nhất: <span id="result4"></span>
+            </p>
+            <button  onclick="btn3()" style="margin-bottom: 2rem;">Tính</button>
+        </div>
+
+
+        <div class="collapse" id="collapseExample" style="background-color: azure; border-style: outset;">
+            <p  class="tieude">4.Tìm số dương nhỏ nhất</p>
+            <p>
+                Số dương nhỏ nhất: <span id="result5"></span>
+            </p>
+            <button  onclick="btn4()" style="margin-bottom: 2rem;">Tính</button>
+        </div>
+
+
+        <div class="collapse" id="collapseExample" style="background-color: azure; border-style: outset;">
+            <p  class="tieude">5.Tìm số chẵn cuối cùng</p>
+            <p>
+                Số chẵn cuối cùng: <span id="result6"></span>
+            </p>
+            <button onclick="btn5()" style="margin-bottom: 2rem;">Tính</button>
+        </div>
+
+
+        <div class="collapse" id="collapseExample" style="background-color: azure; border-style: outset;">
+            <p class="tieude">6.Đổi chỗ</p>
+            <input type="number" placeholder="Nhập vị trí số 1">
+            <input type="number" placeholder="Nhập vị trí số 2">
+            <p>
+                Đổi chỗ: <span id="result7"></span>
+            </p>
+            <button  onclick="btn6()" style="margin-bottom: 2rem;">Tính</button>
+        </div>
+
+
+        <div class="collapse" id="collapseExample" style="background-color: azure; border-style: outset;">
+            <p  class="tieude">7.Sắp xếp tăng dần</p>
+            <p>
+                Sắp xếp: <span id="result8"></span>
+            </p>
+            <button  onclick="btn7()" style="margin-bottom: 2rem;">Tính</button>
+        </div>
+
+
+        <div class="collapse" id="collapseExample" style="background-color: azure; border-style: outset;">
+            <p  class="tieude">8.Tìm số nguyên tố đầu tiên</p>
+            <p>
+                Số nguyên tố đầu tiên: <span id="result9"></span>
+            </p>
+            <button  onclick="btn8()" style="margin-bottom: 2rem;">Tính</button>
+        </div>
+
+
+        <div class="collapse" id="collapseExample" style="background-color: azure; border-style: outset;">
+            <p  class="tieude">9.Đếm số nguyên</p>
+            <p>
+                Đếm số nguyên: <span id="result10"></span>
+            </p>
+            <button  onclick="btn9()" style="margin-bottom: 2rem;">Tính</button>
+        </div>
+
+
+        <div class="collapse" id="collapseExample" style="background-color: azure; border-style: outset;">
+            <p  class="tieude">10.So sánh số lượng số âm và dương</p>
+            <p>
+                So sánh: <span id="result11"></span>
+            </p>
+            <button  onclick="btn10()" style="margin-bottom: 2rem;">Tính</button>
+        </div>
+       
+    </container>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+<script src="./index.js"></script>
 </body>
+
 </html>
