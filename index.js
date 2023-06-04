@@ -12,7 +12,7 @@ function themmoi() {
 
 //1. tổng số dương
 function btn1() {
-    alert('còn câu 2 4 6 10 em chưa làm. hehe!')
+    alert('còn câu 6 em chưa làm. hehe!')
     var sum = 0
     for (var i = 0; i < mang.length; i++) {
         if (mang[i] >= 0) {
@@ -22,6 +22,17 @@ function btn1() {
 
     document.getElementById('result2').innerHTML = sum
 }
+//2. đếm số dương
+function btn2() {
+    var dem = 0;
+    for (var i = 0; i < mang.length; i++) {
+        if (mang[i] >= 0) {
+            dem++
+        }
+    }
+
+    document.getElementById('result3').innerHTML = dem
+}
 // 3.tìm số nhỏ nhất trong mảng
 function btn3() {
 
@@ -30,6 +41,18 @@ function btn3() {
     document.getElementById('result4').innerHTML = minInNumbers
 
 }
+//4. tìm số dương nhỏ nhất
+function btn4() {
+    var min = -1;
+    var i;
+    for (i = 0; i < mang.length; i++) {
+        if ((min == -1 || min > mang[i]) && mang[i] > 0) {
+            min = mang[i];
+        }
+    }
+    document.getElementById('result5').innerHTML = min
+}
+
 // 5. TÌM SÓ CHẴN CUỐI CÙNG
 function btn5() {
     var tong = 0
@@ -71,4 +94,29 @@ function btn9() {
     var length = mang.length
     document.getElementById('result10').innerHTML = length
 }
+//10. so sánh âm và dương
+function btn10() {
+    var dem = 0;
+    var sosanh = document.getElementById('sosanh');
+    for (var i = 0; i < mang.length; i++) {
+        if (mang[i] >= 0) {
+            dem++
+        }
+    }
+    var med = 0;
+    for (var i = 0; i < mang.length; i++) {
+        if (mang[i] <= 0) {
+            med++
+        }
+    }
+    if(dem > med) {
+        sosanh = ">"
+    }else if( dem = med){
+        sosanh = "="
+    } else{
+        sosanh = "<"
+    }
 
+    document.getElementById('result11').innerHTML ='số dương: '+dem +' '+sosanh+' ' +'số âm: '+ med
+
+}
