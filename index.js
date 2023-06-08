@@ -12,7 +12,7 @@ function themmoi() {
 
 //1. tổng số dương
 function btn1() {
-    alert('còn câu 6 em chưa làm. hehe!')
+    alert('còn câu 6, 7 em chưa làm xong. hehe!')
     var sum = 0
     for (var i = 0; i < mang.length; i++) {
         if (mang[i] >= 0) {
@@ -68,26 +68,32 @@ function btn5() {
 
 }
 
-//7. tìm số nguyên tố đầu tiên
+//7. sắp xếp tăng dần 
 function btn7() {
-    document.getElementById('result8').innerHTML = mang[0]
-
-}
-
-//8. sắp xếp tăng dần 
-function btn8() {
     for (var i = 0; i < mang.length - 1; i++) {
         for (var j = i + 1; j < mang.length; j++) {
             if (mang[i] > mang[j]) {
-                var tmp = mang[i]
+                var tmp = parseInt(mang[i]);
 
                 mang[i] = mang[j]
                 mang[j] = tmp
             }
         }
     }
-    document.getElementById('result9').innerHTML = mang
+    document.getElementById('result8').innerHTML = mang
 }
+
+//8. tìm số nguyên tố đầu tiên
+function btn8() {
+    var kq = -1
+    for (var i = 0; i < mang.length; i++){
+        if (mang[i] == 1) {
+            kq = mang[i]
+    }
+    document.getElementById('result9').innerHTML = kq
+}
+}
+
 
 //9. đếm số nguyên
 function btn9() {
@@ -96,8 +102,8 @@ function btn9() {
 }
 //10. so sánh âm và dương
 function btn10() {
-    var dem = 0;
     var sosanh = document.getElementById('sosanh');
+    var dem = 0;
     for (var i = 0; i < mang.length; i++) {
         if (mang[i] >= 0) {
             dem++
@@ -105,7 +111,7 @@ function btn10() {
     }
     var med = 0;
     for (var i = 0; i < mang.length; i++) {
-        if (mang[i] <= 0) {
+        if (mang[i] < 0) {
             med++
         }
     }
@@ -113,7 +119,7 @@ function btn10() {
         sosanh = ">"
     }else if( dem = med){
         sosanh = "="
-    } else{
+    } else {
         sosanh = "<"
     }
 
