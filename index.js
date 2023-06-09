@@ -12,7 +12,7 @@ function themmoi() {
 
 //1. tổng số dương
 function btn1() {
-    alert('còn câu 6, 7 em chưa làm xong. hehe!')
+    alert('còn câu 6 em chưa làm xong. hehe!')
     var sum = 0
     for (var i = 0; i < mang.length; i++) {
         if (mang[i] >= 0) {
@@ -47,7 +47,7 @@ function btn4() {
     var i;
     for (i = 0; i < mang.length; i++) {
         if ((min == -1 || min > mang[i]) && mang[i] > 0) {
-            min = mang[i];
+            min = parseInt(mang[i]);
         }
     }
     document.getElementById('result5').innerHTML = min
@@ -84,15 +84,31 @@ function btn7() {
 }
 
 //8. tìm số nguyên tố đầu tiên
-function btn8() {
-    var kq = -1
-    for (var i = 0; i < mang.length; i++){
-        if (mang[i] == 1) {
-            kq = mang[i]
+function isprime(n){
+    var flag = 1;
+
+    if (n <2) return flag = 0;
+    
+    var i = 2;
+    while(i <n){
+        if( n%i==0 ) {
+            flag = 0;
+            break; 
+        }
+        i++;
     }
-    document.getElementById('result9').innerHTML = kq
+
+    return flag;
+}
+
+function btn8() {
+    for (var i = 0; i < mang.length; i++){
+        if (isprime(mang[i]) === 1)
+
+    document.getElementById('result9').innerHTML = mang[i];
 }
 }
+
 
 
 //9. đếm số nguyên
